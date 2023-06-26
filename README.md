@@ -7,16 +7,15 @@ When copying the object, ensure you just grab everything between (and including)
 ```js
 const config = {
 	theme: {
+		//      ↓ Copy this bracket...
 		colors: {
-			// <- Copy this bracket...
-
 			white: "#ffffff",
 			gray: {
 				50: "#f9fafb",
 				100: "#f1f5f9",
-				// ...
+				// [...]
 			},
-		}, // <- ...to this one (inclusive)
+		}, // ← ...to this one (inclusive)
 	},
 };
 ```
