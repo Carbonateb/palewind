@@ -1,0 +1,40 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.highlight {
+		box-shadow: inset 0 1px 0 0 rgb(255 255 255 / var(--tw-highlight, 6%));
+	}
+
+	.highlight-lg {
+		--tw-highlight: 20%;
+	}
+}
+
+@layer components {
+	.interactive {
+		@apply highlight rounded-lg bg-slate-800 shadow-sm;
+	}
+	.interactive-primary {
+		@apply highlight highlight-lg rounded-lg bg-sky-500 text-white shadow-sm;
+	}
+}
+
+.custom-scrollbar {
+	scrollbar-color: theme("colors.slate.500") transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 0.5rem;
+	height: 0.5rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	@apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	@apply highlight rounded bg-slate-600;
+}
