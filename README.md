@@ -1,3 +1,5 @@
+Available at [**palewind.pages.dev**](https://palewind.pages.dev)
+
 # Palewind
 
 Palewind (Palette + Tailwind) is a palette editor designed specifically for Tailwind projects. It uses the same format to store colors as `tailwind.config.cjs`, so you can simply copy and paste the colors object into the editor.
@@ -28,7 +30,9 @@ Tip: take a look at the preloaded palette, notice the shape that the nodes make 
 
 ## Color Editor
 
-The concept for the editor was taken from the excellent [palettte.app](https://palettte.app/) by [Gabriel Schneider](https://twitter.com/gabdorf).
+The concept for the editor was taken from the excellent [palettte.app](https://palettte.app/) by [Gabriel Schneider](https://twitter.com/gabdorf). I have extended it with my own ideas.
+
+### How to use
 
 - The orange (left) node is **hue**
 - The gray (middle) node is **saturation**
@@ -38,7 +42,27 @@ You can rename individual shades by clicking its name at the top.
 
 Click a shade to input a hex color manually (at the bottom).
 
-Small quirk: Due to converting between HSV and RGB, you may see nodes move by themselves after editing them. The color itself is not changing, just the node.
+Small quirk: Due to converting between HSV and RGB, you may see nodes move by themselves after editing them. **The color itself is not changing**, just the node. The effect is stronger when working with very light or dark colors.
+
+## Why make another palette tool?
+
+In addition to most of the reasons why palettte.app exists, Palewind brings the following advantages:
+
+- Works directly with your tailwind config
+- More efficient use of space
+  - Can comfortably display an 11-shade (50-950) color using half a 1080p monitor
+  - Gives you more room for other windows
+- Nodes never overlap each other
+- Edit shade names quickly
+  - You probably won't even need to if you're using the 50-950 scale
+- Open sourced under them MIT license
+- Quickly visualize all colors in a palette at a glance (via the preview icons)
+
+**Coming soon:**
+
+- Work across different color spaces (HSL, HSV, RGB)
+- The fastest way to edit colors (with turbo mode)
+- A robust color generator for a solid starting point
 
 # Code
 
@@ -52,9 +76,14 @@ The site is being hosted by [Cloudflare Pages](https://pages.cloudflare.com/).
 
 # TODO / Ideas for the future
 
+- [ ] Clean up the code
 - [ ] Create a logo
 - [ ] Clean up UI
+- [ ] Add meta tags
+- [ ] PWA
 - [ ] Add lines between nodes (like in palettte.app)
+- [ ] Add turbo edit mode (hold modifier key + drag to set color)
+- [ ] Add option to remove gaps between shades
 - [ ] Allow changing color spaces
   - [ ] HSV
   - [ ] HSB
@@ -67,6 +96,7 @@ The site is being hosted by [Cloudflare Pages](https://pages.cloudflare.com/).
 - [ ] Integrate Tailwind's `DEFAULT` color feature
 - [ ] More manual input options (RGB, HSV)
 - [ ] Color utils to check contrast
+- [ ] More import / export options
 - [ ] Drag & drop to rearrange
   - [ ] For shades
   - [ ] For colors
