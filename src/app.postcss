@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	:root {
+		@apply bg-slate-900 text-slate-200;
+		font-family: "Rubik", system-ui;
+	}
+
+	input {
+		color-scheme: dark;
+	}
+}
+
 @layer utilities {
 	.highlight {
 		box-shadow: inset 0 1px 0 0 rgb(255 255 255 / var(--tw-highlight, 6%));

@@ -16,50 +16,12 @@ export interface PalewindPaletteShade {
 	id: string;
 	color: string;
 }
-// tahiti: {
-// 	100: "#cffafe",
-// 	200: "#a5f3fc",
-// 	300: "#67e8f9",
-// 	400: "#22d3ee",
-// 	500: "#06b6d4",
-// 	600: "#0891b2",
-// 	700: "#0e7490",
-// 	800: "#155e75",
-// 	900: "#164e63",
-// },
 
 export const palette: Writable<PalewindPalette> = writable([]);
 
 export const currentColorSet: Writable<number> = writable(-1);
 
-/*
-{
-	transparent: "transparent",
-	current: "currentColor",
-	white: "#ffffff",
-	tahiti: {
-		100: "#cffafe",
-		200: "#a5f3fc",
-		300: "#67e8f9",
-		400: "#22d3ee",
-		500: "#06b6d4",
-		600: "#0891b2",
-		700: "#0e7490",
-		800: "#155e75",
-		900: "#164e63",
-	}
-}
-*/
 export function setPaletteFromJson(json: string) {
-	// JSON requires all keys be wrapped in double quotes.
-	// This regex will find un-quoted keys
-	// let matchResults = json.matchAll(/\s(\w*):/g);
-	// for (const match of matchResults) {
-	// 	console.log(match);
-	// 	let replacement = match[0].replace(match[1], `"${match[1]}"`);
-	// 	json = json.replace(match[0], replacement);
-	// }
-
 	let object = eval(`(()=>(${json}))()`) as {
 		[colorName: string]: { [shadeName: string]: string } | string;
 	};

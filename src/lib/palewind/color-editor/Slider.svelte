@@ -28,10 +28,7 @@
 </script>
 
 <div class="w-4 overflow-visible py-2" class:pressed={isPressed}>
-	<div
-		bind:this={track}
-		class="track-inner relative mx-auto h-full w-1 rounded-full transition-all"
-	>
+	<div bind:this={track} class="track-inner relative mx-auto h-full w-1 rounded-full">
 		<div
 			class="thumb"
 			style="left: -6px; top: calc({thumbOffset}% - 8px); background-color: {color};"

@@ -70,32 +70,33 @@ Palewind is made with [SvelteKit](https://kit.svelte.dev/) because it's my favor
 
 The first working version was created in just over a day's work!
 
-Given its rapid development, the code is currently a bit messy. I will clean it up sometime in the future.
+~~Given its rapid development, the code is currently a bit messy. I will clean it up sometime in the future.~~ This has been cleaned up now.
 
 The site is being hosted by [Cloudflare Pages](https://pages.cloudflare.com/).
 
 # TODO / Ideas for the future
 
-- [ ] Clean up the code
-- [ ] Create a logo
-- [ ] Clean up UI
-- [ ] Add meta tags
+- [x] Clean up the code
+- [x] Create a logo
+- [x] Clean up UI
+- [x] Add meta tags
+- [x] Add og:image
 - [ ] PWA
 - [ ] Add lines between nodes (like in palettte.app)
 - [ ] Add turbo edit mode (hold modifier key + drag to set color)
-- [ ] Add option to remove gaps between shades
 - [ ] Allow changing color spaces
   - [ ] HSV
   - [ ] HSB
   - [ ] RGB
-- [ ] Revamped palette creation page
-  - [ ] Specify starting color
-  - [ ] Hue shift
-  - [ ] Saturation
+- [x] Revamped palette creation page
+  - [x] Specify starting color
+  - [x] Hue shift
+  - [x] Saturation
 - [ ] Edit single colors
 - [ ] Integrate Tailwind's `DEFAULT` color feature
 - [ ] More manual input options (RGB, HSV)
 - [ ] Color utils to check contrast
+  - [x] Visualizer for white / black text on color
 - [ ] More import / export options
 - [ ] Drag & drop to rearrange
   - [ ] For shades
@@ -107,3 +108,20 @@ Crazy ideas:
 
 - [ ] A palette sharing section, browse & upload user made palettes.
 - [ ] Open config file directly and provide live updates
+
+# Bonus
+
+```js
+{
+	palewind: {
+		tl: "#f97415",
+		tm: "#94a3b8",
+		tr: "#171717",
+		bl: "#ea6720",
+		bm: "#64748b",
+		br: "#000000"
+	}
+}
+```
+
+Import that 🙂
