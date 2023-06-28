@@ -17,7 +17,7 @@
 					title="Translation: by '🧡' he means Svelte">Made with 🧡 by Carbonateb</span
 				>
 			{:else}
-				<img transition:fade src="/logo2.svg" class="w-6" alt="Logo" />
+				<img transition:fade src="/logo.svg" class="w-6" alt="Logo" />
 				<span transition:fade class="text-2xl">Palewind</span>
 			{/if}
 		</button>

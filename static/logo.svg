@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg class="text-slate-900 dark:text-white w-auto h-5" width="24" height="24" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
- <g stroke="#fff">
-  <circle cx="17.26" cy="16.14" r="4.796" fill="#171717" stroke-width=".876"/>
-  <circle cx="6.737" cy="16.14" r="4.796" fill="#f97315" stroke-width=".876"/>
-  <circle cx="12" cy="7.023" r="4.796" fill="#a1a1aa" stroke-width=".876"/>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="24" height="24" version="1.1" viewBox="0 0 6.35 6.35" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <g stroke-width=".2425">
+   <rect x=".2646" y=".2646" width="5.821" height="5.821" ry=".9701" fill="#fff"/>
+   <path d="m1.38.7497c-.3493 0-.6305.2811-.6305.6305v3.59c-2e-8.3493.2811.6305.6305.6305h1.001v-4.851z" fill="#f97315"/>
+   <path d="m.7498 3.175v1.795c-2e-8.3493.2811.6305.6305.6305h1.001v-2.425h-1.631z" fill="#ea6621"/>
+   <path d="m3.969.7497v4.851h1.001c.3493 0 .6305-.2811.6305-.6305v-3.59c0-.3493-.2811-.6305-.6305-.6305z" fill="#171717"/>
+  </g>
+  <path d="m2.381.7497h1.588v2.425h-1.588z" fill="#94a3b8" stroke-width=".1715"/>
+  <path d="m2.381 3.175h1.588v2.425h-1.588z" fill="#64748b" stroke-width=".1715"/>
+  <text transform="scale(.2646)" fill="#a1a1aa" font-family="'The Seasons'" font-size="26.67px" style="line-height:0.6;shape-inside:url(#rect49453);white-space:pre" xml:space="preserve"/>
+  <path d="m5.6 3.175v1.795c0 .3493-.2811.6305-.6305.6305h-1.001v-2.425z" stroke-width=".2425"/>
  </g>
 </svg>
