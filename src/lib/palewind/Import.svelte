@@ -1,6 +1,12 @@
 <script lang="ts">
 	import defaultPalette from "./default-palette.txt?raw";
-	import { currentColorSet, setPaletteFromString, currentColorShade } from "./Palewind";
+	import {
+		currentColorSet,
+		setPaletteFromString,
+		currentColorShade,
+		readPaletteFromString,
+		palette,
+	} from "./Palewind";
 
 	let inputText: string;
 
@@ -12,6 +18,12 @@
 		setPaletteFromString(inputText);
 		$currentColorSet = -1;
 		$currentColorShade = -1;
+		inputText = "";
+	}
+
+	function appendPalette() {
+		let newPalette = readPaletteFromString(inputText);
+		$palette = $palette.concat(newPalette);
 		inputText = "";
 	}
 </script>
@@ -33,6 +45,7 @@
 		class="custom-scrollbar highlight min-h-[16em] w-full rounded bg-slate-950 p-2 font-mono"
 	/>
 	<button on:click={importPalette} class="interactive interactive-primary px-8 py-1">
-		Import
+		Import (Replace Existing)
 	</button>
+	<button on:click={appendPalette} class="interactive px-8 py-1"> Import (Append) </button>
 </div>
