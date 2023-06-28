@@ -70,7 +70,7 @@ In addition to most of the reasons why palettte.app exists, Palewind brings the 
 
 Palewind is made with [SvelteKit](https://kit.svelte.dev/) because it's my favorite thing in the world.
 
-The first working version was created in just over a day's work!
+The [first working version](https://34a5c5b9.palewind.pages.dev/) was created in just over a day's work!
 
 ~~Given its rapid development, the code is currently a bit messy. I will clean it up sometime in the future.~~ This has been cleaned up now.
 
