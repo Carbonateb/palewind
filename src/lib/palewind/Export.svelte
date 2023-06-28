@@ -18,6 +18,7 @@
 	<p class="mb-8">
 		Your Tailwind compatible object is here.
 		<br />I'm leaving it to your dev environment to format it like the rest of your codebase.
+		<br />Note that duplicate color names will be ignored.
 	</p>
 	<button on:click={exportToClipboard} class="interactive interactive-primary mb-4 px-4 py-1"
 		>Copy to Clipboard</button
