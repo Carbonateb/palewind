@@ -1,14 +1,9 @@
 import { get, writable, type Writable } from "svelte/store";
 
-export const windowName: Writable<string> = writable("");
-
-export const currentColorShade: Writable<number> = writable(-1);
-
-/**
- * This is where we'd add meta data, like if it overrides or extends
- */
+/** A single "project". Contains many colors, which have shades. */
 export type PalewindPalette = PalewindColorSet[];
 
+/** A color in a project. Can have shades, or be a single color. */
 export interface PalewindColorSet {
 	colorName: string;
 	shades: PalewindPaletteShade[];
@@ -16,17 +11,54 @@ export interface PalewindColorSet {
 	singleColor?: string;
 }
 
+/** A single shade in a color set */
 export interface PalewindPaletteShade {
 	id: string;
 	color: string;
 }
 
+/**
+ * Basically our mini URL, used for client side navigation within the app.
+ * It corresponds to the navbar on the left side.
+ * Can be:
+ * - "" (about page, default)
+ * - "export"
+ * - "import"
+ * - "newcolor"
+ * - "color/N" where N is the internal ID of a color we are editing.
+ */
+export const windowName: Writable<string> = writable("");
+
+/** The current palette we are editing. Colors are visible in side bar */
 export const palette: Writable<PalewindPalette> = writable([]);
 
+/**
+ * Corresponds to the color index we have open. Is -1 if not editing a color.
+ * @deprecated use windowName instead.
+ */
 export const currentColorSet: Writable<number> = writable(-1);
 
-export function setPaletteFromJson(json: string) {
-	let object = eval(`(()=>(${json}))()`) as {
+/**
+ * The color shade that is currently being edited. This is a single shade.
+ * Used by the "more info" panel when editing a color.
+ *
+ * -1 means we are not editing a color.
+ */
+export const currentColorShade: Writable<number> = writable(-1);
+
+/**
+ * Used to import a palette from a string.
+ * Overwrites the current palette with the result
+ *
+ * Warning: Works by using eval(), as the JSON parser is not flexible enough
+ * (tailwind config file is JS not JSON, so it might have slightly different syntax)
+ *
+ * TODO rewrite this to not use eval(). Not urgent as this app does not handle sensitive info
+ *
+ * @param input The string to import
+ */
+export function setPaletteFromString(input: string) {
+	let object = eval(`(()=>(${input}))()`) as {
 		[colorName: string]: { [shadeName: string]: string } | string;
 	};
 
@@ -63,6 +95,7 @@ export function setPaletteFromJson(json: string) {
 	palette.set(result);
 }
 
+/** Exports the current palette to a JSON string. */
 export function exportColorsToJson() {
 	let configReplica: {
 		[colorName: string]: { [shadeName: string]: string } | string;
@@ -85,6 +118,9 @@ export function exportColorsToJson() {
 	return JSON.stringify(configReplica, undefined, "  ");
 }
 
+/**
+ * Called when the user navigates around
+ */
 windowName.subscribe((newValue) => {
 	if (newValue.startsWith("color/")) {
 		let color = parseInt(newValue.replace("color/", ""));
@@ -95,6 +131,10 @@ windowName.subscribe((newValue) => {
 	currentColorShade.set(-1);
 });
 
+/**
+ * The default palette that gets loaded on startup.
+ * The import page can also restore it.
+ */
 export const defaultPaletteString = `{
 	transparent: "transparent",
 	current: "currentColor",

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { defaultPaletteString } from "./Palewind";
-	import { currentColorSet, setPaletteFromJson, currentColorShade } from "./Palewind";
+	import { currentColorSet, setPaletteFromString, currentColorShade } from "./Palewind";
 
 	let inputText: string;
 
@@ -9,7 +9,7 @@
 	}
 
 	function importPalette() {
-		setPaletteFromJson(inputText);
+		setPaletteFromString(inputText);
 		$currentColorSet = -1;
 		$currentColorShade = -1;
 		inputText = "";

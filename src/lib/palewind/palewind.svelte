@@ -4,7 +4,7 @@
 	import Export from "./Export.svelte";
 	import Import from "./Import.svelte";
 	import NewColor from "./NewColor.svelte";
-	import { defaultPaletteString, windowName, palette, setPaletteFromJson } from "./Palewind";
+	import { defaultPaletteString, windowName, palette, setPaletteFromString } from "./Palewind";
 	import ColorEditor from "./color-editor/ColorEditor.svelte";
 	import Sidebar from "./sidebar/Sidebar.svelte";
 	import { isPWA } from "$lib/detectPWA";
@@ -16,7 +16,7 @@
 			palette.set(JSON.parse(p));
 		} else {
 			// First time startup
-			setPaletteFromJson(defaultPaletteString);
+			setPaletteFromString(defaultPaletteString);
 		}
 
 		// Auto save palette
