@@ -4,7 +4,6 @@
 	import { windowName } from "../Palewind";
 
 	function deleteColor(index: number) {
-		console.log($currentColorSet, " ", index);
 		if ($currentColorSet == index && index == $palette.length - 1) {
 			if ($palette.length == 1) {
 				// User just deleted last color, go to new color window

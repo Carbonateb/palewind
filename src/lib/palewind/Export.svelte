@@ -13,7 +13,7 @@
 	});
 </script>
 
-<div class="overflow-auto p-4">
+<div class="custom-scrollbar overflow-auto p-4">
 	<h1 class="text-2xl">Export</h1>
 	<p class="mb-8">
 		Your Tailwind compatible object is here.

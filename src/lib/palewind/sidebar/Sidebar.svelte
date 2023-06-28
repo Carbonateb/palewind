@@ -75,7 +75,7 @@
 	<h2 class="mt-8 px-4 text-xs uppercase text-slate-400">Colors</h2>
 
 	<!-- Colors -->
-	<div class="flex-grow overflow-y-auto border-y border-slate-700">
+	<div class="custom-scrollbar flex-grow overflow-y-auto border-y border-slate-600">
 		<ColorList />
 	</div>
 

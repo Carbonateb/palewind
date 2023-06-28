@@ -31,7 +31,7 @@
 		>
 	</div>
 	<ShadeEditor bind:shades={$palette[colorID].shades} />
-	<div class="h-32 border-t border-slate-50/20">
+	<div class="h-32 border-t border-slate-600">
 		{#if $currentColorShade >= 0}
 			<ColorShadeInfo
 				bind:shades={$palette[colorID].shades}

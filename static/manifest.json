@@ -1,0 +1,14 @@
+{
+	"name": "Palewind",
+	"icons": [
+		{
+			"src": "logo-192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#0f172a",
+	"theme_color": "#0f172a",
+	"display": "standalone"
+}

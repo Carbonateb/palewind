@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Palewind from "$lib/palewind/palewind.svelte";
+	import Palewind from "$lib/palewind/Palewind.svelte";
 </script>
 
 <Palewind />

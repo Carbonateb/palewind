@@ -71,7 +71,7 @@
 	}
 </script>
 
-<div class="flex flex-col overflow-auto">
+<div class="custom-scrollbar flex flex-col overflow-auto">
 	<div class="p-4">
 		<h1 class="mb-4 text-2xl">New Color</h1>
 		<!-- svelte-ignore a11y-autofocus -->

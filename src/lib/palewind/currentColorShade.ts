@@ -8,7 +8,6 @@ windowName.subscribe((newValue) => {
 	if (newValue.startsWith("color/")) {
 		let color = parseInt(newValue.replace("color/", ""));
 		currentColorSet.set(color);
-		console.log(color);
 	} else {
 		currentColorSet.set(-1);
 	}

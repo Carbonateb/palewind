@@ -8,6 +8,8 @@
 	import ColorEditor from "./color-editor/ColorEditor.svelte";
 	import Sidebar from "./sidebar/Sidebar.svelte";
 	import { palette, setPaletteFromJson } from "./palette";
+	import { isPWA } from "$lib/detectPWA";
+	import AppHome from "./AppHome.svelte";
 
 	onMount(() => {
 		let p = localStorage.getItem("palette");
@@ -25,12 +27,16 @@
 	});
 </script>
 
-<main>
+<main class:border-t={$isPWA}>
 	<Sidebar />
 
 	<div class="contents">
 		{#if $windowName == ""}
-			<About />
+			{#if $isPWA}
+				<AppHome />
+			{:else}
+				<About />
+			{/if}
 		{:else if $windowName == "import"}
 			<Import />
 		{:else if $windowName == "export"}
@@ -49,7 +55,7 @@
 
 <style lang="postcss">
 	main {
-		@apply grid h-screen select-none overflow-hidden;
+		@apply grid h-screen select-none overflow-hidden border-slate-600;
 		grid-template-columns: 10em auto;
 	}
 </style>

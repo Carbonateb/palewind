@@ -23,7 +23,7 @@
 <div class="flex h-full items-center gap-4">
 	<!-- Color chip -->
 	<div
-		class="highlight relative h-full w-16 items-center justify-center overflow-clip border-r border-slate-700"
+		class="highlight relative h-full w-16 items-center justify-center overflow-clip border-r border-slate-600"
 		style="background-color: {shades[currentIndex].color}; box-shadow: inset 0 2px 6px black"
 	>
 		<!-- style="writing-mode: vertical-lr; text-orientation: upright; letter-spacing: -6px;" -->
@@ -48,7 +48,7 @@
 
 	<!-- Buttons -->
 	<div class="flex h-full flex-col justify-evenly border-l border-zinc-700 p-4">
-		<button class="interactive px-4 py-1" on:click={cloneShade}>Clone</button>
+		<button class="interactive px-4 py-1 hover:bg-sky-500" on:click={cloneShade}>Clone</button>
 		<button class="interactive px-4 py-1 hover:bg-red-500" on:click={onDelete}>Delete</button>
 	</div>
 </div>
