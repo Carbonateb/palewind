@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { hexToHSL, hslToHex } from "$lib/utilities";
 	import Slider from "./Slider.svelte";
-	import { currentColorShade } from "../currentColorShade";
-	import type { PalewindPaletteShade } from "../palette";
+	import { currentColorShade, type PalewindPaletteShade } from "../Palewind";
 
 	export let shade: PalewindPaletteShade;
 	export let index: number;

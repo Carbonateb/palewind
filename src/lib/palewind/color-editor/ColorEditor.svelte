@@ -1,8 +1,6 @@
 <script>
 	import ColorShadeInfo from "../ColorShadeInfo.svelte";
-	import { windowName } from "../Palewind";
-	import { currentColorShade } from "../currentColorShade";
-	import { palette } from "../palette";
+	import { windowName, currentColorShade, palette } from "../Palewind";
 	import ShadeEditor from "./ShadeEditor.svelte";
 
 	$: colorID = parseInt($windowName.replace("color/", ""));

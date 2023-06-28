@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { get } from "svelte/store";
-	import { currentColorShade } from "./currentColorShade";
-	import { currentColorSet, palette, type PalewindPaletteShade } from "./palette";
+	import { currentColorShade, palette, type PalewindPaletteShade } from "./Palewind";
 
 	export let shades: PalewindPaletteShade[];
 	export let currentIndex: number;

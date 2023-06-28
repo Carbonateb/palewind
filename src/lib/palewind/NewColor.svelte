@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { get } from "svelte/store";
-	import { palette, type PalewindPaletteShade } from "./palette";
 	import { hslToHex } from "$lib/utilities";
-	import { windowName } from "./Palewind";
+	import { windowName, palette, type PalewindPaletteShade } from "./Palewind";
 	import { onMount } from "svelte";
 	import ShadeEditor from "./color-editor/ShadeEditor.svelte";
 

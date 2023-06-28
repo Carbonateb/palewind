@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { exportColorsToJson } from "./palette";
+	import { exportColorsToJson } from "./Palewind";
 
 	let exportValue: string = "";
 

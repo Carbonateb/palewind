@@ -4,10 +4,9 @@
 	import Export from "./Export.svelte";
 	import Import from "./Import.svelte";
 	import NewColor from "./NewColor.svelte";
-	import { defaultPaletteString, windowName } from "./Palewind";
+	import { defaultPaletteString, windowName, palette, setPaletteFromJson } from "./Palewind";
 	import ColorEditor from "./color-editor/ColorEditor.svelte";
 	import Sidebar from "./sidebar/Sidebar.svelte";
-	import { palette, setPaletteFromJson } from "./palette";
 	import { isPWA } from "$lib/detectPWA";
 	import AppHome from "./AppHome.svelte";
 

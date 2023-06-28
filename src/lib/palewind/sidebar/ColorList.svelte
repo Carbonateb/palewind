@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { prettyPrint } from "$lib/utilities";
-	import { currentColorSet, palette } from "../palette";
-	import { windowName } from "../Palewind";
+	import { windowName, currentColorSet, palette } from "../Palewind";
 
 	function deleteColor(index: number) {
 		if ($currentColorSet == index && index == $palette.length - 1) {
