@@ -1,32 +1,38 @@
 <script>
 	import { windowName } from "./Palewind";
+	import ProjectManager from "./ProjectManager.svelte";
 </script>
 
-<div class="m-16 max-w-lg text-slate-300">
+<div class="custom-scrollbar overflow-y-auto p-16 text-slate-300">
 	<div class="mb-8 flex items-center gap-4 text-6xl text-slate-50">
 		<img src="/logo.svg" class="w-16" alt="Logo" /> Palewind
 	</div>
-	<p class="font-bold text-slate-100">A palette editor specifically designed for Tailwind users.</p>
-	<p>
-		It works with the Tailwind config file, and uses the standard 50-950 scale by default so you can
-		get straight to business.
-	</p>
-	<p>
-		The concept for the editor itself is based on <a href="https://palettte.app">palettte.app</a>.
-	</p>
-	<h1>Get Started</h1>
-	<p>
-		If you've got some colours in your config file already, head over to <button
-			on:click={() => ($windowName = "import")}>Import</button
-		> and paste your color object there.
-	</p>
-	<p>If not, you can use the preloaded palette as a good starting point.</p>
-	<p class="text-orange-300">Pro tip: Use Palewind without internet by installing the PWA</p>
-	<h1>Find Out More</h1>
-	<p>
-		The README of the <a href="https://github.com/Carbonateb/palewind">GitHub repository</a> has much
-		more information. Please file any issues / feedback there. Contributions are welcome!
-	</p>
+	<div class="mb-16 max-w-xl">
+		<p class="font-bold text-slate-100">
+			A palette editor specifically designed for Tailwind users.
+		</p>
+		<p>
+			It works with the Tailwind config file, and uses the standard 50-950 scale by default so you
+			can get straight to business.
+		</p>
+		<p>
+			The concept for the editor itself is based on <a href="https://palettte.app">palettte.app</a>.
+		</p>
+		<h1>Get Started</h1>
+		<p>
+			If you've got some colours in your config file already, head over to <button
+				on:click={() => ($windowName = "import")}>Import</button
+			> and paste your color object there.
+		</p>
+		<p>If not, you can use the preloaded palette as a good starting point.</p>
+		<p class="text-orange-300">Pro tip: Use Palewind without internet by installing the PWA</p>
+		<h1>Find Out More</h1>
+		<p>
+			The README of the <a href="https://github.com/Carbonateb/palewind">GitHub repository</a> has much
+			more information. Please file any issues / feedback there. Contributions are welcome!
+		</p>
+	</div>
+	<ProjectManager />
 </div>
 
 <style lang="postcss">

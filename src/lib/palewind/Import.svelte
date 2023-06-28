@@ -1,5 +1,5 @@
 <script lang="ts">
-	import defaultPalette from "./default-palette.txt";
+	import defaultPalette from "./default-palette.txt?raw";
 	import { currentColorSet, setPaletteFromString, currentColorShade } from "./Palewind";
 
 	let inputText: string;

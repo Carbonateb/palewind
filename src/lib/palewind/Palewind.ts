@@ -17,6 +17,12 @@ export interface PalewindPaletteShade {
 	color: string;
 }
 
+export interface PalewindProject {
+	id: string;
+	name: string;
+	palette: PalewindPalette;
+}
+
 /**
  * Basically our mini URL, used for client side navigation within the app.
  * It corresponds to the navbar on the left side.
@@ -53,11 +59,12 @@ export const currentColorShade: Writable<number> = writable(-1);
  * Warning: Works by using eval(), as the JSON parser is not flexible enough
  * (tailwind config file is JS not JSON, so it might have slightly different syntax)
  *
- * TODO rewrite this to not use eval(). Not urgent as this app does not handle sensitive info
+ * TODO rewrite this to not use eval().
+ * Not urgent as this app does not handle sensitive info
  *
  * @param input The string to import
  */
-export function setPaletteFromString(input: string) {
+export function readPaletteFromString(input: string) {
 	let object = eval(`(()=>(${input}))()`) as {
 		[colorName: string]: { [shadeName: string]: string } | string;
 	};
@@ -92,7 +99,14 @@ export function setPaletteFromString(input: string) {
 		}
 	}
 
-	palette.set(result);
+	return result;
+}
+
+/**
+ * @deprecated Use readPaletteFromString, the pure version of this function
+ */
+export function setPaletteFromString(input: string) {
+	palette.set(readPaletteFromString(input));
 }
 
 /** Exports the current palette to a JSON string. */
@@ -118,9 +132,7 @@ export function exportColorsToJson() {
 	return JSON.stringify(configReplica, undefined, "  ");
 }
 
-/**
- * Called when the user navigates around
- */
+// Called when the user navigates around
 windowName.subscribe((newValue) => {
 	if (newValue.startsWith("color/")) {
 		let color = parseInt(newValue.replace("color/", ""));

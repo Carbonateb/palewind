@@ -4,25 +4,21 @@
 	import Export from "./Export.svelte";
 	import Import from "./Import.svelte";
 	import NewColor from "./NewColor.svelte";
-	import { windowName, palette, setPaletteFromString } from "./Palewind";
+	import { windowName, palette } from "./Palewind";
 	import ColorEditor from "./color-editor/ColorEditor.svelte";
 	import Sidebar from "./sidebar/Sidebar.svelte";
 	import { isPWA } from "$lib/detectPWA";
 	import AppHome from "./AppHome.svelte";
-	import defaultPalette from "./default-palette.txt";
+	import { currentProjectID, projects } from "./Projects";
 
 	onMount(() => {
-		let p = localStorage.getItem("palette");
-		if (p) {
-			palette.set(JSON.parse(p));
-		} else {
-			// First time startup
-			setPaletteFromString(defaultPalette);
-		}
-
 		// Auto save palette
 		palette.subscribe((newValue) => {
-			localStorage.setItem("palette", JSON.stringify(newValue));
+			let p = $projects[$currentProjectID];
+			p.palette = newValue;
+			localStorage.setItem(`project-${p.id}`, JSON.stringify(p));
+			$projects[$currentProjectID] = p;
+			console.log("saved palette", p);
 		});
 	});
 </script>
