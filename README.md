@@ -49,6 +49,7 @@ Small quirk: Due to converting between HSV and RGB, you may see nodes move by th
 In addition to most of the reasons why palettte.app exists, Palewind brings the following advantages:
 
 - Works directly with your tailwind config
+- A robust color generator for a solid starting point
 - More efficient use of space
   - Can comfortably display an 11-shade (50-950) color using half a 1080p monitor
   - Gives you more room for other windows
@@ -57,12 +58,13 @@ In addition to most of the reasons why palettte.app exists, Palewind brings the 
   - You probably won't even need to if you're using the 50-950 scale
 - Open sourced under them MIT license
 - Quickly visualize all colors in a palette at a glance (via the preview icons)
+- Offline support
 
 **Coming soon:**
 
+- A project manager to store your palettes
 - Work across different color spaces (HSL, HSV, RGB)
 - The fastest way to edit colors (with turbo mode)
-- A robust color generator for a solid starting point
 
 # Code
 
