@@ -34,7 +34,7 @@ function loadProjectsFromStorage() {
 		return [
 			{
 				id: id,
-				name: "Default",
+				name: "Default (click here to rename)",
 				palette: palette,
 			},
 		];
