@@ -15,3 +15,13 @@ export const isPWA: Writable<boolean> = writable(false);
 window.matchMedia("(display-mode: standalone)").addEventListener("change", (event) => {
 	isPWA.set(event.matches);
 });
+
+export const isOnline: Writable<boolean> = writable(navigator.onLine);
+
+window.addEventListener("online", (ev) => {
+	isOnline.set(true);
+});
+
+window.addEventListener("offline", (ev) => {
+	isOnline.set(false);
+});

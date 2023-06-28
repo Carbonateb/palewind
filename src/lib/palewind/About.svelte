@@ -21,9 +21,7 @@
 		> and paste your color object there.
 	</p>
 	<p>If not, you can use the preloaded palette as a good starting point.</p>
-	<p class="text-orange-300">
-		Pro tip: Palewind is a PWA, install it for a more app-like experience!
-	</p>
+	<p class="text-orange-300">Pro tip: Use Palewind without internet by installing the PWA</p>
 	<h1>Find Out More</h1>
 	<p>
 		The README of the <a href="https://github.com/Carbonateb/palewind">GitHub repository</a> has much
