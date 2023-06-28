@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { defaultPaletteString } from "./Palewind";
+	import defaultPalette from "./default-palette.txt";
 	import { currentColorSet, setPaletteFromString, currentColorShade } from "./Palewind";
 
 	let inputText: string;
 
 	function loadDefaultPalette() {
-		inputText = defaultPaletteString;
+		inputText = defaultPalette;
 	}
 
 	function importPalette() {

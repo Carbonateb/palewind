@@ -4,11 +4,12 @@
 	import Export from "./Export.svelte";
 	import Import from "./Import.svelte";
 	import NewColor from "./NewColor.svelte";
-	import { defaultPaletteString, windowName, palette, setPaletteFromString } from "./Palewind";
+	import { windowName, palette, setPaletteFromString } from "./Palewind";
 	import ColorEditor from "./color-editor/ColorEditor.svelte";
 	import Sidebar from "./sidebar/Sidebar.svelte";
 	import { isPWA } from "$lib/detectPWA";
 	import AppHome from "./AppHome.svelte";
+	import defaultPalette from "./default-palette.txt";
 
 	onMount(() => {
 		let p = localStorage.getItem("palette");
@@ -16,7 +17,7 @@
 			palette.set(JSON.parse(p));
 		} else {
 			// First time startup
-			setPaletteFromString(defaultPaletteString);
+			setPaletteFromString(defaultPalette);
 		}
 
 		// Auto save palette
