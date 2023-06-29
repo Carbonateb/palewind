@@ -18,7 +18,6 @@
 			p.palette = newValue;
 			localStorage.setItem(`project-${p.id}`, JSON.stringify(p));
 			$projects[$currentProjectID] = p;
-			console.log("saved palette", p);
 		});
 	});
 </script>

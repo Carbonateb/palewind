@@ -17,13 +17,10 @@ export const allProjectUUIDs: Writable<string[]> = writable([]);
 export const projects: Writable<PalewindProject[]> = writable([]);
 
 projects.set(loadProjectsFromStorage());
-console.log("set projects to: ", get(projects));
 
 function loadProjectsFromStorage() {
 	// Load allProjectUUIDs
 	let projectIDs = localStorage.getItem("projects");
-	console.log(projectIDs);
-
 	if (!projectIDs) {
 		// No projects on disk, create default project
 		let id = crypto.randomUUID();
@@ -45,14 +42,11 @@ function loadProjectsFromStorage() {
 	let result: PalewindProject[] = [];
 
 	for (const id of get(allProjectUUIDs) as string[]) {
-		console.log(id);
 		let loadedProject = localStorage.getItem(`project-${id}`);
-		console.log(loadedProject);
 		if (loadedProject) {
 			result.push(JSON.parse(loadedProject));
 		}
 	}
-	console.log(result);
 
 	return result;
 }
