@@ -50,6 +50,8 @@ In addition to most of the reasons why palettte.app exists, Palewind brings the 
 
 - Works directly with your tailwind config
 - A robust color generator for a solid starting point
+- A project manager to store your palettes
+- Work across different color spaces (HSL, HSV, RGB)
 - More efficient use of space
   - Can comfortably display an 11-shade (50-950) color using half a 1080p monitor
   - Gives you more room for other windows
@@ -62,8 +64,6 @@ In addition to most of the reasons why palettte.app exists, Palewind brings the 
 
 **Coming soon:**
 
-- A project manager to store your palettes
-- Work across different color spaces (HSL, HSV, RGB)
 - The fastest way to edit colors (with turbo mode)
 
 # Code
@@ -83,28 +83,30 @@ The site is being hosted by [Cloudflare Pages](https://pages.cloudflare.com/).
 - [x] Clean up UI
 - [x] Add meta tags
 - [x] Add og:image
-- [ ] PWA
+- [x] PWA
 - [ ] Add lines between nodes (like in palettte.app)
 - [ ] Add turbo edit mode (hold modifier key + drag to set color)
-- [ ] Allow changing color spaces
-  - [ ] HSV
-  - [ ] HSB
-  - [ ] RGB
+- [x] Allow changing color spaces
+  - [x] HSV
+  - [x] HSB
+  - [x] RGB
 - [x] Revamped palette creation page
   - [x] Specify starting color
   - [x] Hue shift
   - [x] Saturation
 - [ ] Edit single colors
 - [ ] Integrate Tailwind's `DEFAULT` color feature
-- [ ] More manual input options (RGB, HSV)
+- [x] More manual input options (RGB, HSV)
 - [ ] Color utils to check contrast
   - [x] Visualizer for white / black text on color
+  - [ ] Contrast ratio rating (AA / AAA)
 - [ ] More import / export options
 - [ ] Drag & drop to rearrange
   - [ ] For shades
   - [ ] For colors
 - [ ] Undo history
-- [ ] Multiple "projects"
+- [x] Multiple "projects"
+- [ ] Back up & restore projects (save as a file)
 
 Crazy ideas:
 
