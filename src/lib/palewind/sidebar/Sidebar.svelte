@@ -12,10 +12,11 @@
 			class="relative flex h-12 w-full items-center justify-center gap-1 border-b border-gray-600"
 		>
 			{#if $windowName == ""}
-				<span
+				<a
+					href="https://github.com/Carbonateb/palewind"
 					transition:fade
 					class="absolute inset-0 bg-slate-800 pt-2 text-xs text-slate-500"
-					title="Translation: by '🧡' he means Svelte">Made with 🧡 by Carbonateb</span
+					title="Translation: by '🧡' he means Svelte">Made with 🧡 by Carbonateb</a
 				>
 			{:else}
 				<img transition:fade src="/logo.svg" class="w-6" alt="Logo" />
@@ -23,7 +24,11 @@
 			{/if}
 		</button>
 	</div>
-	<button on:click={() => ($windowName = "import")} class:selected={$windowName == "import"}>
+	<button
+		class="nav-item"
+		on:click={() => ($windowName = "import")}
+		class:selected={$windowName == "import"}
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1em"
@@ -40,7 +45,11 @@
 			/><path d="M2 13h10" /><path d="m9 16 3-3-3-3" /></svg
 		>Import</button
 	>
-	<button on:click={() => ($windowName = "export")} class:selected={$windowName == "export"}>
+	<button
+		class="nav-item"
+		on:click={() => ($windowName = "export")}
+		class:selected={$windowName == "export"}
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1em"
@@ -57,7 +66,11 @@
 			/><path d="M2 13h10" /><path d="m5 10-3 3 3 3" /></svg
 		>Export</button
 	>
-	<button on:click={() => ($windowName = "newcolor")} class:selected={$windowName == "newcolor"}>
+	<button
+		class="nav-item"
+		on:click={() => ($windowName = "newcolor")}
+		class:selected={$windowName == "newcolor"}
+	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1em"
@@ -85,8 +98,7 @@
 </nav>
 
 <style lang="postcss">
-	a,
-	nav > button {
+	.nav-item {
 		@apply flex items-center gap-4 py-1 pl-4 text-slate-400 hover:bg-slate-800 hover:text-slate-100;
 	}
 
