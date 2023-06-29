@@ -3,13 +3,15 @@
 	import { windowName, currentColorSet, palette } from "../Palewind";
 
 	function deleteColor(index: number) {
-		if ($currentColorSet == index && index == $palette.length - 1) {
+		console.log($currentColorSet, index);
+
+		if ($currentColorSet >= index) {
 			if ($palette.length == 1) {
 				// User just deleted last color, go to new color window
 				$windowName = "newcolor";
 			} else {
 				// Go to previous color
-				$windowName = `color/${index - 1}`;
+				$windowName = `color/${$currentColorSet - 1}`;
 			}
 		}
 		$palette.splice(index, 1);
@@ -40,6 +42,7 @@
 					{prettyPrint(colorSet.colorName)}
 				</div>
 
+				<!-- Delete button -->
 				<button
 					class="rounded opacity-0 hover:bg-red-500"
 					on:click|stopPropagation={() => deleteColor(i)}
@@ -61,19 +64,38 @@
 		{:else}
 			<!-- Single color -->
 			<div
-				class="flex items-center gap-4 px-4"
+				class="palette-selector flex items-center pl-4 pr-2"
 				title="Single colors cannot be edited yet, change them in the config manually"
 			>
 				<!-- Round preview -->
 				<div
 					style="background-color: {colorSet.singleColor}; box-shadow: inset 0 0 4px #00000060"
-					class="h-3 w-3 rounded-full border border-slate-300"
+					class="mr-4 h-3 w-3 rounded-full border border-slate-300"
 				/>
 
 				<!-- Color name -->
-				<div class="text-sm text-slate-600">
+				<div class="flex-grow text-sm text-slate-600">
 					{prettyPrint(colorSet.colorName)}
 				</div>
+
+				<!-- Delete button -->
+				<button
+					class="rounded opacity-0 hover:bg-red-500"
+					on:click|stopPropagation={() => deleteColor(i)}
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="1em"
+						height="1em"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg
+					>
+				</button>
 			</div>
 		{/if}
 	{/each}
