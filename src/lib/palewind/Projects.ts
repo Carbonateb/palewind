@@ -73,6 +73,28 @@ export function createProject() {
 	currentProjectID.set(newIndex);
 }
 
+export function deleteProject(index: number) {
+	// Get the project ID
+	let p = get(projects);
+	let uuid = p[index].id;
+
+	// Nuke it
+	p.splice(index, 1);
+	projects.set(p);
+	localStorage.removeItem(`project-${uuid}`);
+
+	// Remove it from our list of projects
+	let temp = get(allProjectUUIDs);
+	temp.splice(index, 1);
+	allProjectUUIDs.set(temp);
+
+	// If we deleted a project lower than the current one
+	// We need to adjust the currently open project
+	if (index < get(currentProjectID)) {
+		currentProjectID.set(get(currentProjectID) - 1);
+	}
+}
+
 currentProjectID.subscribe((value) => {
 	palette.set(get(projects)[value].palette);
 });
@@ -80,16 +102,3 @@ currentProjectID.subscribe((value) => {
 allProjectUUIDs.subscribe((value) => {
 	localStorage.setItem("projects", JSON.stringify(value));
 });
-
-function getAllProjectIds(): string[] {
-	let storedString = localStorage.getItem("projects");
-	if (storedString) {
-		return JSON.parse(storedString);
-	} else {
-		return [];
-	}
-}
-
-function setAllProjectIds(newProjectIds: string[]) {
-	localStorage.setItem("projects", JSON.stringify(newProjectIds));
-}

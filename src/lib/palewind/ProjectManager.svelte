@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { palette } from "./Palewind";
-	import { createProject, currentProjectID, projects } from "./Projects";
+	import { createProject, deleteProject, currentProjectID, projects } from "./Projects";
 
 	function openProject(index: number) {
 		$currentProjectID = index;
@@ -14,7 +14,7 @@
 		<button
 			on:click={() => openProject(index)}
 			class:active={$currentProjectID == index}
-			class="project-card overflow-hidden rounded-lg border border-slate-700 bg-slate-950 text-left"
+			class="project-card relative overflow-hidden rounded-lg border border-slate-700 bg-slate-950 text-left"
 		>
 			<!-- Color preview window -->
 			<div class="color-preview flex h-32 w-64">
@@ -37,6 +37,24 @@
 				}}
 				class="w-full bg-transparent px-4 py-2 focus:outline-none"
 			/>
+
+			<button
+				class="delete-button absolute right-0 top-0 m-1 rounded text-xl text-white opacity-0 hover:bg-red-500"
+				on:click|stopPropagation={() => deleteProject(index)}
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="1em"
+					height="1em"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-x"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg
+				>
+			</button>
 		</button>
 	{/each}
 </div>
@@ -55,5 +73,12 @@
 
 	.project-card:not(.active) .color-preview {
 		filter: blur(15px) brightness(0.66);
+	}
+
+	.project-card:hover .delete-button {
+		@apply opacity-100;
+	}
+	.project-card.active .delete-button {
+		@apply hidden;
 	}
 </style>
