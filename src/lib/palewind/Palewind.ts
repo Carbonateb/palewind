@@ -1,3 +1,4 @@
+import { ColorConvert, prettyPrint } from "$lib/utilities";
 import { get, writable, type Writable } from "svelte/store";
 
 /** A single "project". Contains many colors, which have shades. */
@@ -130,6 +131,30 @@ export function exportColorsToJson() {
 	}
 
 	return JSON.stringify(configReplica, undefined, "  ");
+}
+
+/** Exports the current palette to a JSON string, in HSL. */
+export function exportColorsToCss() {
+	let result = "";
+
+	let p = get(palette);
+
+	for (const color of p) {
+		if (color.singleColor) {
+			result += `--${color.colorName}: ${color.singleColor}\n`;
+		} else {
+			result += `\n/* ${prettyPrint(color.colorName)} */\n`;
+			for (const shade of color.shades) {
+				let hsl = ColorConvert.RGBtoHSL(ColorConvert.hexToRGB(shade.color));
+				let split = `${Math.floor(hsl[0] * 360)} ${Math.round(hsl[1] * 100)}% ${Math.round(
+					hsl[2] * 100
+				)}%`;
+				result += `--${color.colorName}-${shade.id}: ${split}\n`;
+			}
+		}
+	}
+
+	return result;
 }
 
 // Called when the user navigates around

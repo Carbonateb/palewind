@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { exportColorsToJson } from "./Palewind";
+	import { exportColorsToJson, exportColorsToCss } from "./Palewind";
 
 	let exportValue: string = "";
+	let exportValueCss: string = "";
 
 	function exportToClipboard() {
 		navigator.clipboard.writeText(exportValue);
@@ -10,6 +11,7 @@
 
 	onMount(() => {
 		exportValue = exportColorsToJson();
+		exportValueCss = exportColorsToCss();
 	});
 </script>
 
@@ -23,5 +25,8 @@
 	<button on:click={exportToClipboard} class="interactive interactive-primary mb-4 px-4 py-1"
 		>Copy to Clipboard</button
 	>
-	<pre class="select-text rounded bg-slate-950 p-2 text-sm text-slate-400">{exportValue}</pre>
+	<div class="grid grid-cols-2 gap-4">
+		<pre class="select-text rounded bg-slate-950 p-2 text-sm text-slate-400">{exportValue}</pre>
+		<pre class="select-text rounded bg-slate-950 p-2 text-sm text-slate-400">{exportValueCss}</pre>
+	</div>
 </div>

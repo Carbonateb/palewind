@@ -73,8 +73,10 @@
 	}
 	function copyHsl() {
 		const hsl = ColorConvert.RGBtoHSL(rgb);
+		console.log(hsl);
+
 		navigator.clipboard.writeText(
-			`${Math.floor(hsl[0] * 360)} ${Math.round(hsl[1]) * 100}% ${Math.round(hsl[2] * 100)}%`
+			`${Math.floor(hsl[0] * 360)} ${Math.round(hsl[1] * 100)}% ${Math.round(hsl[2] * 100)}%`
 		);
 	}
 	function cleanNum(num: number) {
