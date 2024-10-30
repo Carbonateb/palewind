@@ -141,7 +141,7 @@ export function exportColorsToCss() {
 
 	for (const color of p) {
 		if (color.singleColor) {
-			result += `--${color.colorName}: ${color.singleColor}\n`;
+			result += `--${color.colorName}: ${color.singleColor};\n`;
 		} else {
 			result += `\n/* ${prettyPrint(color.colorName)} */\n`;
 			for (const shade of color.shades) {
@@ -149,7 +149,7 @@ export function exportColorsToCss() {
 				let split = `${Math.floor(hsl[0] * 360)} ${Math.round(hsl[1] * 100)}% ${Math.round(
 					hsl[2] * 100
 				)}%`;
-				result += `--${color.colorName}-${shade.id}: ${split}\n`;
+				result += `--${color.colorName}-${shade.id}: ${split};\n`;
 			}
 		}
 	}
